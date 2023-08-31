@@ -4,7 +4,7 @@ Done By Cohort 9 Group 10, consisting of Harel Yee, Liew Yu Xin, Joy, Krittanat 
 
 [Project Video](https://www.youtube.com/watch?v=OIolfgjjPrU)
 
-Instructions:
+# Instructions
 
 The simulation consists of 4 people from which their motionw can be controlled simultaneoulsy from the keyboard.
 The controls are as follows:  
@@ -15,10 +15,10 @@ The controls are as follows:
 
 The Step Screen consists of 2 modes, Art Mode and Game Mode.
 
-Art Mode (default mode)
+**Art Mode** (default mode)
 - Displays a kaleidoscopic pattern from the paths taken by the people walkning around the step screen.
 
-Game Mode 
+**Game Mode** 
 - Displays a pong game, which all users can play.
 
 
