@@ -3,7 +3,7 @@ Step Screen Simulation on Processong. For Design Thinking Innovation, 3.007, Coh
 
 Insturctions:
 
-The simulation consists of 4 people from which their motopn can be controlled simultaneoulsy from the keyboard.
+The simulation consists of 4 people from which their motion can be controlled simultaneoulsy from the keyboard.
 The controls are as follows:
 
 1: Use Arrow keys, ctrl to run
