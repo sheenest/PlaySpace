@@ -1,5 +1,6 @@
-# Step-Screen
-Step Screen Simulation on Processong. For Design Thinking Innovation, 3.007, Cohort 9 Group 10
+# Play Space
+Play Space Simulation on Processong. For SUTD Design Thinking Innovation, 3.007, 2021.  
+Done By Cohort 9 Group 10, consisting of Harel Yee, Liew Yu Xin, Joy , Krittanat Kulsakdinun and Tan Zen Sheen. 
 
 [Project Video](https://www.youtube.com/watch?v=OIolfgjjPrU)
 
