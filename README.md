@@ -1,4 +1,4 @@
-# Play Space
+# PlaySpace
 Play Space Simulation on Processong. For SUTD Design Thinking Innovation, 3.007, 2021.  
 Done By Cohort 9 Group 10, consisting of Harel Yee, Liew Yu Xin, Joy, Krittanat Kulsakdinun and Tan Zen Sheen. 
 
