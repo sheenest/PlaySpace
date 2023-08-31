@@ -3,9 +3,9 @@ Step Screen Simulation on Processong. For Design Thinking Innovation, 3.007, Coh
 
 [Project Video](https://www.youtube.com/watch?v=OIolfgjjPrU)
 
-Insturctions:
+Instructions:
 
-The simulation consists of 4 people from which their motion can be controlled simultaneoulsy from the keyboard.
+The simulation consists of 4 people from which their motionw can be controlled simultaneoulsy from the keyboard.
 The controls are as follows:
 
 1: Use Arrow keys, ctrl to run
@@ -22,5 +22,5 @@ Game Mode
 - Displays a pong game, which all users can play.
 
 
-At the top left and bottom right corners of the matrix, are the Control tiles (in pink). Having two players to each step on the control tiles will toggle the step screen between Art Mode and Game Mode.
+At the top left and bottom right corners of the matrix, are Control tiles (in pink). Having two players to each step on the control tiles will toggle the step screen between Art Mode and Game Mode.
 Art Mode is the default mode, so it will be run whenever a person steps into the space when it is empty.
