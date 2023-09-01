@@ -9,9 +9,9 @@ Done By Cohort 9 Group 10, consisting of Harel Yee, Liew Yu Xin, Joy, Krittanat 
 The simulation consists of 4 people from which their motionw can be controlled simultaneoulsy from the keyboard.
 The controls are as follows:  
 1: Use Arrow keys, ctrl to run  
-2: WASD, Q to run  
-3: YGHJ, T to run  
-4: P;L', O to run  
+2: W A S D, Q to run  
+3: Y G H J, T to run  
+4: P ; L ', O to run  
 
 The Step Screen consists of 2 modes, Art Mode and Game Mode.
 
