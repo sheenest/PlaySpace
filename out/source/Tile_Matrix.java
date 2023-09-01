@@ -20,7 +20,7 @@ public class Tile_Matrix extends PApplet {
 person[] people = new person[4];
 boolean[] in_matrix =  new boolean[people.length]; //true means in matrix, false means out of matrix
 
-ArrayList<person> p_in_matrix;
+ArrayList<person> p_in_matrix; //dynamic array that tracks the person objects in the matrix
 
 matrix m;
 
@@ -35,6 +35,7 @@ public void setup(){
     
     frameRate(30);
 
+    // person( int identity_ , PVector start_pos_ , color dcolour_ , int up_ , int down_ , int left_ , int right_ , int speedup_ ){
     people[0] = new person ( 0 , new PVector( width / 4 , height/4 ) , color( 255 , 0 , 89 ) , 38 , 40 , 37 , 39 , 17 ); 
     // 38 -- Up
     // 40 -- Down
@@ -65,16 +66,19 @@ public void setup(){
 
     p_in_matrix = new ArrayList<person>();
 
-    in_matrix[0] = false;
-    in_matrix[1] = false;
+    for ( int i = 0 ; i < in_matrix.length ; i ++ ) {
+        in_matrix[i] = false;
+    }
+
     // matrix( PVector center_ , int length_ , person[] guys_ ){
     m = new matrix ( new PVector( width/2 , height/2 ) , 0.8f * height , people);
 
-    game = new gameMode ( new PVector( 10 , 60) , 10 , 0.8f , m );
     // gameMode( PVector bat_size_ , float pong_size_ , float boundary_ratio_ , matrix m_g , person[] gamers_ ){
+    game = new gameMode ( new PVector( 10 , 60) , 10 , 0.8f , m );
 
-    art = new artMode( 5 , m );
     // artMode( int trail_size_ , matrix m_a_ ){
+    art = new artMode( 40 , m );
+
 }
 
 
@@ -107,11 +111,12 @@ public void draw(){
         }
         else{ //a person left the matrix
 
-            art.drawing = true; 
+            art.drawing = true; //for the displaying of dead paths
         }        
     }
 
-
+    //appends a person into p_in_matrix whenever a person steps into the matrix
+    //likewise removes that person from p_in_matrix whenever a person leaves the matrix
     for ( int i = people.length-1 ; i >= 0 ; i -- ){
 
         if( just_stepped( people[i].pos , people[i].prev_position , m.top_left , new PVector( m.length , m.length )  ) ) {
@@ -180,15 +185,15 @@ public void draw(){
 class person{
     // PVector start_pos;
 
-    int identity ; 
-    PVector pos;
-    PVector vel;
-    PVector prev_position;
-    int control_keys[] = new int[5];
+    int identity ; //identity value of the person 
+    PVector pos; //position vector
+    PVector vel; //velocity vector
+    PVector prev_position; //previous position vector
+    int control_keys[] = new int[5]; //associated control keys
     boolean control_key_pressed[] = new boolean[5];
     PVector direction; 
 
-    int dcolour;
+    int dcolour;//display color
 
     float speed;
 
@@ -259,8 +264,7 @@ class person{
 
     }
 
-    public void move(){
-        // float speed; 
+    public void move(){ //updates position of person
 
         if ( control_key_pressed[0] == true ){
             direction.y = -1 ; 
@@ -377,8 +381,8 @@ class matrix{
         toggle_switch[1] = true;
     }
 
-    public boolean[] flow (){// mainly to compute when the matrix will toggle the modes
-    // void flow(){
+    // mainly to compute when the matrix will toggle the modes
+    public boolean[] flow (){
 
 
         fill(50);
@@ -426,7 +430,6 @@ class matrix{
                     all_check = false; //as long one value in check_tiles is false, all_check is false
                 } 
             }
-            // println( check_tiles );
 
             boolean stepped = false ; 
 
@@ -477,25 +480,6 @@ class matrix{
 
     }
 
-    // boolean just_stepped ( PVector position ,  PVector prev_position , PVector boundary , PVector boundary_size ){
-
-    //         // if position is within tile
-    //         //prev_position out of tile
-
-    //         boolean v = false ; 
-
-    //         if ( within( position , boundary , boundary_size ) == true ){
-    //             if ( within( prev_position , boundary , boundary_size ) == false ){
-
-    //                 v = true; 
-
-    //             }   
-    //         }
-
-    //         return v ; 
-
-    // }
-
     public boolean toggleperson ( person yoz ){
         
         boolean toggle = false ;
@@ -514,8 +498,6 @@ class matrix{
 
         return toggle ; 
     }
-
-    
 }
 
 
@@ -559,22 +541,14 @@ class gameMode{
     }
 
     public void run( ArrayList<person> gamers_ ){
-
-        // gamers = new person[ gamers_.size() ];
-        // person[] arraylist_to_list( ArrayList<person> als ){
         
         gamers = new person[ gamers_.size() ];
         gamers = arraylist_to_list( gamers_ );
 
-        // gamers = gamers_ ; 
-
-        bats = new PVector[ gamers.length ];
+        bats = new PVector[ gamers.length ]; //initialization of pong bats
         for ( int i = 0 ; i < bats.length ; i ++ ){
-
             bats[i] = new PVector( gamers[i].pos.x - bat_size.x / 2 , gamers[i].pos.y - bat_size.y / 2 ) ;
         }
-
-        // rect( gamers[i].pos.x - bat_size.x / 2 , gamers[i].pos.y - bat_size.y / 2 , bat_size.x , bat_size.y )
         
         fill( 137 , 148 , 170 );
         rect( boundary_topleft.x , boundary_topleft.y , boundary_length , boundary_width ) ; 
