@@ -1,5 +1,5 @@
 # PlaySpace
-PlaySpace Simulation on Processing. Project for Singapore University of Technology and Design, Design Thinking Innovation (3.007), 2021.  
+PlaySpace Simulation on Processing. Project for SUTD 3.007 Design Thinking Innovation, 2021.  
 Done By Cohort 9 Group 10, consisting of Harel Yee, Liew Yu Xin, Joy, Krittanat Kulsakdinun and Tan Zen Sheen. 
 
 [Project Video](https://www.youtube.com/watch?v=OIolfgjjPrU)
